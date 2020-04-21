@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 
 from enum import Enum
-
-class Identifier(object):
-    def __init__(self, **kwargs):
-        self.__dict__ = kwargs
-
+from human import Human
 
 
 if __name__ == "__main__":
-    pass
+    patient = Human()
+    print('治疗前: score = ', patient.score())
+
+    print('治疗后: score = ', patient.score())
+    
     
