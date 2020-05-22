@@ -4,6 +4,16 @@ from enum import Enum
 import abc
 from six import with_metaclass
 
+class Air(Enum):
+    """
+    六气
+    """
+    Air_Wind    = "风",
+    Air_Hot     = "热",
+    Air_Summer  = "暑",
+    Air_Damp    = "湿",
+    Air_Dry     = "燥",
+    Air_Cold    = "寒"
 
 class FivePhases(Enum):
     PHASE_JIN   = "金",
@@ -29,6 +39,34 @@ class AbstractOrgan(with_metaclass(abc.ABCMeta)):
         """
         raise NotImplementedError
 
+class Gallbladder(AbstractOrgan):
+    """
+    胆囊
+    """
+    def __init__(self):
+        pass
+
+
+class Stomach(AbstractOrgan):
+    """
+    胃
+    """
+    def __init__(self):
+        pass
+
+class LargeIntestine(AbstractOrgan):
+    """
+    大肠
+    """
+    def __init__(self):
+        pass
+
+class LittleIntestine(AbstractOrgan):
+    """
+    小肠
+    """
+    def __init__(self):
+        pass
 
 
 class Hepatic(AbstractOrgan):
@@ -87,11 +125,12 @@ class Lung(AbstractOrgan):
 class Human(object):
     def __init__(self):
         self._score = 100   #健康指数，满分100分
-        self._lung      = Lung()
-        self._heart     = Heart()
-        self._kidney    = Kidney()
-        self._spleen    = Spleen()
-        self._hepatic   = Hepatic()
+        self._lung      = Lung()    # 肺脏
+        self._heart     = Heart()   # 心脏
+        self._kidney    = Kidney()  # 肾脏
+        self._spleen    = Spleen()  # 脾脏
+        self._hepatic   = Hepatic() # 肝脏
+
 
     def treat(self, medician):
         """
