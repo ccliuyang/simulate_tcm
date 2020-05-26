@@ -4,6 +4,7 @@ from enum import Enum
 import abc
 from six import with_metaclass
 
+
 class Air(Enum):
     """
     六气
@@ -38,6 +39,15 @@ class AbstractOrgan(with_metaclass(abc.ABCMeta)):
         返回当前脏器的五行属性
         """
         raise NotImplementedError
+
+    @abc.abstractproperty
+    def meridian_entry(self):
+        """
+        [Required]
+        返回脏器所属经脉
+        """
+        raise NotImplementedError
+
 
 class Gallbladder(AbstractOrgan):
     """
@@ -130,6 +140,7 @@ class Human(object):
         self._kidney    = Kidney()  # 肾脏
         self._spleen    = Spleen()  # 脾脏
         self._hepatic   = Hepatic() # 肝脏
+
 
 
     def treat(self, medician):
