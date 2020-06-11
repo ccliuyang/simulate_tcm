@@ -32,7 +32,7 @@ class AbstractOrgan(with_metaclass(abc.ABCMeta)):
     """
     脏器
     """
-    @abc.abstractproperty
+    @abc.abstractmethod
     def five_phases(self):
         """
         [Required]
@@ -40,7 +40,7 @@ class AbstractOrgan(with_metaclass(abc.ABCMeta)):
         """
         raise NotImplementedError
 
-    @abc.abstractproperty
+    @abc.abstractmethod
     def meridian_entry(self):
         """
         [Required]

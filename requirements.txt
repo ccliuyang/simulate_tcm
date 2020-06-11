@@ -1,0 +1,8 @@
+six
+setuptools
+click
+gevent
+logbook
+yaml
+pyyaml
+flask
